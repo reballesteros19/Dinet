@@ -14,7 +14,6 @@ public class PersonaService {
         this.personaDao = personaDao;
     }
 
-    @PostConstruct
     @Transactional
     public void fillData(){
         Persona persona = Persona.builder()
@@ -22,7 +21,8 @@ public class PersonaService {
                 .apellido("Apellido1")
                 .telefono("Telefono1")
                 .build();
-        System.out.println("Funciona");
+
+        System.out.println(persona.toString());
 
     }
 }
